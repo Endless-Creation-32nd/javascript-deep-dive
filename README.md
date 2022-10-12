@@ -18,7 +18,7 @@
   - inseo
   - jeongjin
   - sangjun
-  - hyolyn
+  - hyorin
 - PR에서 **주마다 궁금했던 점, 더 알고싶었던 점을 코멘트로 작성**하고 스터디를 하며 내용을 최종 검토한 뒤 main에 merge한다.
 - **위 과정을 반복한다.**
 
