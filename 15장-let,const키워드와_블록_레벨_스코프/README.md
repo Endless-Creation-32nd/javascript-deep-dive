@@ -7,7 +7,7 @@
 
 ### 15.1.1 변수 중복 선언 허용
 
-```jsx
+```js
 var x = 1;
 var y = 1;
 
@@ -29,7 +29,7 @@ console.log(y); // 1
 
 - var 키워드로 선언한 변수는 **함수의 코드 블록만을 지역 스코프로 인정**한다.(함수 레벨 스코프)
 
-```jsx
+```js
 var x = 1;
 
 if (true) {
@@ -42,14 +42,14 @@ console.log(x); // 2
 
 for 문도 변수 선언문에서 var 키워드로 선언한 변수는 전역변수가 된다.
 
-```jsx
-var x = 10;
+```js
+var i = 10;
 
 for (var i = 0; i < 5; i++) {
   console.log(i);
 }
 
-console.log(x); // 5
+console.log(i); // 5
 ```
 
 ### 15.1.3 변수 호이스팅
@@ -57,7 +57,7 @@ console.log(x); // 5
 - var 키워드로 변수를 선언하면 변수 호이스팅에 의해 **변수 선언문의 스코프가 선두로 끌어 올려진 것처럼 동작한**다.
 - 즉, 호이스팅으로 인해 var 키워드로 선언한 변수 선언문 이전에 참조할 수 있다.
 
-```jsx
+```js
 // 호이스팅에 의해 이미 변수가 선언되었다. - 1. 선언 단계
 // 변수 foo는 undefined로 초기화 된다. - 2. 초기화 단계
 console.log(foo); // undefined
@@ -87,7 +87,7 @@ var foo;
 - var 키워드로 선언한 변수는 오로지 함수의 코드 블록만을 지역 스코프로 인정하는 **함수 레벨 스코프**를 따른다.
 - 하지만 let 키워드로 선언한 변수는 모든 코드 블록(함수, if 문, for 문, while 문, try/catch 문 등)을 지역 스코프로 인정하는 **블록 레벨 스코프**를 따른다.
 
-```jsx
+```js
 let foo = 1; // 전역 변수
 
 {
@@ -109,7 +109,7 @@ console.log(bar); // ReferenceError: bar is not defined
 
 - let 키워드로 선언한 변수는 호이스팅이 일어나지 않는 것처럼 보이지만 **사실은 호이스팅이 일어난다.**
 
-```jsx
+```js
 console.log(foo); // ReferenceError: foo is not defined
 let foo;
 ```
@@ -118,7 +118,7 @@ let foo;
 - 즉, 선언 단계에서 스코프에 변수 식별자를 등록하고 `undefined` 로 즉시 초기화 한다.
 - 따라서 변수 선언문 이전에 변수에 접근해도 스코프에 변수가 존재하기 때문에 에러가 발생하지 않는다.
 
-```jsx
+```js
 // var 키워드로 선언한 변수는 런타임 이전에 선언과 초기화가 동시에 일어난다.
 console.log(foo); // undefined
 
@@ -128,7 +128,7 @@ var foo = 1;
 - **let 키워드로 선언한 변수는 '선언 단계'와 '초기화 단계'가 분리되어 진행된다.**
 - 즉, 런타임 이전에 선언 단계가 먼저 실행되지만 초기화 단계는 변수 선언문에 도달했을 때 실행된다.
 
-```jsx
+```js
 // 런타임 이전에 선언 단계만 실행된다.(초기화X)
 console.log(foo); // ReferenceError: foo is not defined
 
@@ -144,7 +144,7 @@ console.log(foo); // 1
 
 - let 키워드로 선언한 변수는 호이스팅이 발생하지 않는 것처럼 보이지만 호이스팅이 일어난다.
 
-```jsx
+```js
 var foo = 1; // 전역 변수
 
 {
@@ -160,7 +160,7 @@ var foo = 1; // 전역 변수
 
 - var 키워드로 선언한 전역 변수/함수, 선언하지 않는 변수에 값을 할당하는 것은 전역 객체 window의 프로퍼티가 된다.
 
-```jsx
+```js
 var x = 1;
 
 //선언하지 않는 변수에 값을 할당도 window 객체의 프로퍼티가 된다.
@@ -182,7 +182,7 @@ foo(); // I'm foo!
 
 - 위와 같이 전역에 선언한 변수 x, y, 함수 foo는 전역 객체 window의 프로퍼티가 된다.
 
-```jsx
+```js
 window
 {
   ...
@@ -198,7 +198,7 @@ window
 - let 키워드로 선언한 전역 변수는 전역 객체의 프로퍼티가 되지 않는다.
 - let 전역 변수는 **전역 렉시컬 환경의 선언적 환경 레코드**(23장 "실행 컨텍스트"에서 다룸)라는 곳에 존재하게 된다.
 
-```jsx
+```js
 let x = 1;
 
 // let, const 로 선언한 전역 변수는 전역 객체 window의 프로퍼티가 되지 않는다.
@@ -219,7 +219,7 @@ console.log(x); // 1
 
 - const 키워드로 선언한 변수는 선언과 동시에 초기화해야 한다.
 
-```jsx
+```js
 const foo = 1;
 
 const bar; // SyntaxError: Missing initializer in const declaration
@@ -227,7 +227,7 @@ const bar; // SyntaxError: Missing initializer in const declaration
 
 - let 키워드로 선언한 변수와 똑같이 호이스팅이 발생한다.
 
-```jsx
+```js
 {
   // 호이스팅이 발생한다.
   console.log(foo); // ReferenceError: Cannot access 'foo' before initialization
@@ -243,7 +243,7 @@ console.log(foo); // Uncaught ReferenceError: foo is not defined
 
 - var, let 키워드로 선언한 변수와 달리 재할당이 금지다.
 
-```jsx
+```js
 const foo = 1;
 foo = 2; // TypeError: Assignment to constant variable.
 ```
@@ -258,7 +258,7 @@ foo = 2; // TypeError: Assignment to constant variable.
 - const 키워드로 선언된 변수에 **객체를 할당한 경우 값을 변경할 수 있다.**
 - 변경 가능한 값인 객체는 재할당 없이도 직접 변경이 가능하기 때문이다.
 
-```jsx
+```js
 const person = {
   name: 'Lee',
 };
