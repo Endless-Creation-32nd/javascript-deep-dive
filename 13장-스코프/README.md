@@ -50,12 +50,12 @@ var x = 'global'; // 전역 스코프
 
 function foo() {
     var x = 'local';
-    console.log(x); // 1 : foo 함수 스코프
+    console.log(x); // 1번 : foo 함수 스코프
 }
 
 foo();
 
-console.log(x); // 2
+console.log(x); // 2번
 ```
 
 위 코드를 봤을 때, 1번과 2번 모두 x를 참조한다.
@@ -91,7 +91,7 @@ function foo() {
     console.log(x);
 }
 
-foo();
+foo(); // 2
 ```
 
 let이나 const 키워드로 선언된 변수는 같은 스코프 내에서 중복 선언을 허용하지 않는다.
