@@ -175,10 +175,13 @@ function outer() {
 	console.log(x);
 
 	function inner() {
-		var x = "inner's local x';
-		console.log(x);
+		var x = "inner's local x";
+		console.log(x); // "inner's local x"
+		console.log(z); // "outer's local z"
 	}	
 	inner();
+	
+	console.log(x);
 }
 outer();
 ```
@@ -226,6 +229,7 @@ var x = 1;
 
 if (true) {
   var x = 10; // x는 전역 변수.
+  }
 
 console.log(x); // 10, 값이 재할당됨
 ```
@@ -250,8 +254,8 @@ function bar() {
   console.log(x);
 }
 
-foo(); // ?
-bar(); // ?
+foo(); // 1
+bar(); // 1
 ```
 
 - **상위 스코프 결정 방법**
