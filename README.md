@@ -1,4 +1,4 @@
-<p align="center"><img width='300px' src="http://image.yes24.com/goods/92742567/XL"></p>
+<p align="center"><img width='300px' src="https://user-images.githubusercontent.com/24623403/195018411-a7a93794-d079-4311-977e-f61a5970a415.png"></p>
 <p align='center'>
   <a href="https://github.com/Endless-Creation-32nd/javascript-deep-dive/issues"><img src='https://img.shields.io/github/issues/Endless-Creation-32nd/javascript-deep-dive'></a>
   <a href="https://github.com/Endless-Creation-32nd/javascript-deep-dive/pulls"><img src='https://img.shields.io/github/issues-pr/Endless-Creation-32nd/javascript-deep-dive'></a>
@@ -18,7 +18,7 @@
   - inseo
   - jeongjin
   - sangjun
-  - hyolyn
+  - hyorin
 - PR에서 **주마다 궁금했던 점, 더 알고싶었던 점을 코멘트로 작성**하고 스터디를 하며 내용을 최종 검토한 뒤 main에 merge한다.
 - **위 과정을 반복한다.**
 
