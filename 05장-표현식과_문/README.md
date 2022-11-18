@@ -147,7 +147,7 @@ var sum  =  1  +  2;
 토큰 토큰 토큰 토큰토큰토큰토큰
 ```
 
-![img](img/statement.png);
+![images](images/statement.png);
 
 - 문은 프로그램을 구성하는 기본 단위, 최소 실행 단위
   - 문이 모여서 프로그램이 된다
