@@ -165,7 +165,7 @@ console.log(prefixer.add(['transition', 'user-select']));
 (function () {return this.x;}).bind(this);
 ```
 
-- 만약 화살표 함수끼리 중첩되어 있다면 상위 화살표 함수에도 this 바인딩이 없으므로 스코프 체인 상에서 가자 가까운 상위 함수 중에서 화살표 함수가 아닌 함수의 this를 참조한다.
+- 만약 화살표 함수끼리 중첩되어 있다면 상위 화살표 함수에도 this 바인딩이 없으므로 스코프 체인 상에서 가장 가까운 상위 함수 중에서 화살표 함수가 아닌 함수의 this를 참조한다.
 - 프로퍼티에 할당한 화살표 함수도 스코프 체인상에서 가장 가까운 상위 함수 중에서 화살표 함수가 아닌 함수의 this를 참조한다.
 - 화살표 함수는 함수 자체의 this 바인딩을 갖지 않기 때문에 Function.prototype.call, Function.prototype.apply, Function.prototype.bind 메서드를 사용해도 화살표 함수 내의 this를 교체할 수 없다.
 
@@ -233,7 +233,7 @@ console.log(foo.length); // 1
 - arguments 객체는 함수 호출 시 전달 된 인수들의 정보를 담고 있는 유사 배열 객체이다.
 - 따라서 배열 메서드를 사용하려면 Function.prototype.call, Function.prototype.apply 메서드를 사용해 객체를 배열로 변환해야 한다.
 - Rest 파라미터를 사용하면 가변인자 함수의 인수 목록을 배열로 직접 받을 수 있다.
-- 화살표 함수는 arguments 객체를 갖지 않기 때무에 가변인자 함수를 구현해야 할 때는 반드시 Rest 파라미터를 사용해야 한다.
+- 화살표 함수는 arguments 객체를 갖지 않기 때문에 가변인자 함수를 구현해야 할 때는 반드시 Rest 파라미터를 사용해야 한다.
 
 ## 26.5 매개변수 기본값
 
