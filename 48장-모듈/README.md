@@ -12,11 +12,31 @@
 
 - 기존 자바스크립트는 모듈 시스템을 가지고 있지 않았다.
 - script 태그로 불러온 여러 스크립트들은 마치 하나의 파일안에 작성된 코드들처럼 동작한다.
+  ```html
+  <script src="script.js"></script>
+  ```
 - 자바스크립트에서 모듈시스템을 사용하기 위해 CommonJS와 AMD의 방식이 제안되기도 했고, ES6에서는 ESM 방식이 도입되었다.
+  ```js
+  // CommonJS
+  const $ = require("jquery");
+  ```
+  ```js
+  // AMD
+  require(["jquery"], function ($) {
+    // ...
+  });
+  ```
+  ```js
+  // ESM
+  import $ from "jquery";
+  ```
 
 ## 48.3 ES6 모듈(ESM)
 
 - 특정 스크립트를 ESM으로 취급하기 위해서는 script태그에 type="module" 어트리뷰트를 추가해야한다.
+  ```html
+  <script type="module" src="script.js"></script>
+  ```
 - ESM에서는 기본적으로 strict mode가 적용된다.
 - ESM은 독자적인 모듈 스코프를 제공한다.
 - export 키워드를 통해 특정 식별자를 공개할 수 있다.
@@ -56,7 +76,7 @@
   ```js
   import { a as A, f as F, C as CC } from "./someModule.js";
   ```
-- '\*'를 통해 모든 리소스를 한 번에 import 할 수도 있다. 이때, 반드시 as 키워드를 통해 식별자 명을 지정해줘야한다.
+- '\*'를 통해 모든 리소스를 한 번에 import 할 수도 있다. 이때, 반드시 as 키워드를 통해 네임스페이스를 지정해줘야한다.
   ```js
   import * as someModule from "./someModule.js";
   ```
