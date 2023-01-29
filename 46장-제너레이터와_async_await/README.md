@@ -101,13 +101,9 @@ console.log("next" in generator); //true;
 
   ```javascript
   function* genFunc() {
-    try {
-      yield 1;
-      yield 2;
-      yield 3;
-    } catch (e) {
-      console.error(e);
-    }
+    yield 1;
+    yield 2;
+    yield 3;
   }
 
   const generator = genFunc();
@@ -133,23 +129,19 @@ console.log("next" in generator); //true;
 ```javascript
 function* genFunc() {
   let arr = [];
-  try {
-    console.log("first");
-    let a = 1;
-    arr.push(1);
-    yield arr;
+  console.log("first");
+  let a = 1;
+  arr.push(1);
+  yield arr;
 
-    console.log("second");
-    let b = 2;
-    arr.push(2);
-    yield arr;
+  console.log("second");
+  let b = 2;
+  arr.push(2);
+  yield arr;
 
-    console.log("third");
-    arr.push( * a + b * b);
-    yield arr;
-  } catch (e) {
-    console.error(e);
-  }
+  console.log("third");
+  arr.push(a * a + b * b);
+  yield arr;
 }
 
 //이터러블이면서 이터레이터인 제너레이터 객체 반환
@@ -180,15 +172,11 @@ next() 메서드는이전 yield ~ 다음 yield 이전까지 코드를 실행, �
 
   ```javascript
   function* genFunc() {
-    try {
-      const a = yield 1;
+    const a = yield 1;
 
-      const b = yield a * 10;
+    const b = yield a * 10;
 
-      return a * b;
-    } catch (e) {
-      console.error(e);
-    }
+    return a * b;
   }
 
   const generator = genFunc();
