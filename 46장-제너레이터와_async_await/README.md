@@ -50,13 +50,10 @@ class Myclass {
   function* genFunc() {
     yield 1;
   }
-  function* genFunc() {
+  function *genFunc() {
     yield 1;
   }
-  function* genFunc() {
-    yield 1;
-  }
-  function* genFunc() {
+  function * genFunc() {
     yield 1;
   }
   ```
@@ -90,8 +87,9 @@ console.log("next" in generator); //true;
 
   > 제너레이터 객체는 next 메서드를 갖고 있는 이터레이터지만 이터레이터에 없는 return, throw 메서드를 가진다
 
-  - next  
-    실행 시 제너레이터의 yield 표현식까지 코드블록을 실행하고, value에 yield된 값을, done에는 false값을 가진 이터레이터 리절트 객체를 반환한다
+
+- next  
+  실행 시 제너레이터의 yield 표현식까지 코드블록을 실행하고, value에 yield된 값을, done에는 false값을 가진 이터레이터 리절트 객체를 반환한다
 
 - return
   실행 시 value에는 인수로 전달받은 값, done에는 true 값을 가진 이터레이터 리절트 객체를 반환
@@ -147,7 +145,6 @@ function* genFunc() {
 //이터러블이면서 이터레이터인 제너레이터 객체 반환
 const generator = genFunc();
 
-undefined;
 generator.next();
 // first
 // {value: Array(1), done: false}
@@ -183,14 +180,21 @@ next() 메서드는이전 yield ~ 다음 yield 이전까지 코드를 실행, �
 
   // 처음과 마지막 next의 인수는 의미가 없다
   generator.next(2);
+  // 인수로 넣어준 2는 아무 효과가 없다
   // {value: 1, done: false}
 
   generator.next(10);
+  // 인수 10은 첫번째 yield가 할당해주는 값, 즉 a에 할당됨 
   // {value: 100, done: false}
 
-  // 처음과 마지막 next의 인수는 의미가 없다
+
   generator.next(20);
+  // 인수로 넣어준 20은 두번째 yield가 할당해주는 값, 즉 b에 할당됨
   // {value: 200, done: true}
+
+  // 처음과 마지막 next의 인수는 의미가 없다
+  generator.next(1000);
+  // {value: undefined, done:true}  
   ```
 
   이처럼 제너레이터 함수는 next 메서드와 yield 표현식을 통해 함수 호출자와 상태를 주고받을 수 있다
